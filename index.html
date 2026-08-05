@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>remake</title>
+    <style>
+        body{
+             background: linear-gradient(235deg, #ffe98a, #beb1f7);
+        }
+        div.slogan {
+            text-align: center;
+            display: inline-block;
+            margin: 10px;
+            width: 15%;
+            padding: 3px;
+            font-family: '黑体';
+            font-size: 20px;
+            background: linear-gradient(235deg, #ffe98a, #beb1f7);
+            -webkit-background-clip: text;
+            background-clip:text;
+            -webkit-text-fill-color: transparent;
+            
+        }
+        div.slogan:hover{
+            transform: scale(1.2);
+            text-shadow: -2px 5px 1px #7a7a7a;
+        }
+        @media(max-width:576px){
+            div.slogan{
+                width: 40%;
+            }
+        }
+        h1{
+            text-align: center;
+            font-family: '黑体';
+            font-size: 60px;
+            margin: 0%;
+            text-shadow: 0 5px 10px #918b8b;
+            -webkit-background-clip: text;
+            background-clip:text;
+            color: #f7e6b0;
+        }
+        .link{
+            text-align: center;
+            font-size: 12px;
+            color: #a0f334;
+            font-family: '华文彩云';
+        }
+        .move_meme{
+            display: flex;
+            text-align: center;
+            align-items: center;
+            justify-content: center;
+        }
+        .scroll{
+            background-color: #918b8b;
+            display: flex;  
+            width:980px;
+            overflow: hidden;
+            border: 2px solid #ddd;
+            position: relative;
+        }
+        .img_list{
+            display: flex;
+            animation: scroll 5s linear infinite;
+        }
+        .img_list img{
+            height: 100px;
+            width: 100px;
+            margin-right: 10px; 
+        }
+        @keyframes scroll{
+            from{
+                transform: translateX(0);
+            }
+            to{
+                transform: translateX(-33.333%);
+            }
+        }
+        .jump{
+            margin: 20px;
+            animation: jump 2s ease infinite;
+        }
+        .jump img{
+            width: 70px;
+            height: 70px;
+        }
+        @keyframes jump{
+            0%{transform: translateY(0) rotate(0);}
+            0%{transform: translateY(-50px) rotate(180deg);}
+            0%{transform: translateY(0) rotate(360deg);}
+        }
+        .content1{
+            display: grid;
+            grid-template-columns: 220px 0.9fr 1.5fr 1fr 2fr 200px;
+            grid-template-rows: auto 1fr auto;
+            background: linear-gradient(180deg, #cab0ee, #ffe23f);
+        }
+        @media (max-width:576px){
+            .content1{
+                grid-template-columns: 1fr;
+            }
+            .content1 img{
+                max-width: 100%;
+            }
+        }
+        .content1Head{
+            grid-column: 1/-1;
+            background:#d8c8ee;
+            text-align: center;
+            color: #ffe98a;
+        }
+        .content1foot{
+            grid-column: 1/-1;
+            background:#ffe98a;
+            text-align: center;
+            color: #d8c8ee;
+        }
+        .content1 img{
+            height: 200px;
+            margin: 10px;
+        }
+        .content12{
+            text-align: center;
+            font-family: '黑体';
+            font-size: 20px;
+            margin: auto 10%;
+            transition: all 0.3s;
+             font-family: '黑体';
+            font-size: 15px;
+            color: #552b8f;
+        }
+        .content12:hover{
+            box-shadow: 0 8px 8px 0 gray;
+            transform: translate(0, -10px);
+            transform: scale(1.2) ;
+            background: linear-gradient(180deg, #ffe23f, #cab0ee);
+        }
+        a{
+            text-decoration: none;
+             font-family: '黑体';
+            font-size: 15px;
+            color: #552b8f;
+        }
+        .content2{
+            display: flex;
+            justify-content: space-between;
+        }
+        .content20{
+            width: 800px;
+            display: flex;
+            background: url("img_folder/phoebe_teach.png") no-repeat;
+            background-size: 1000px;
+            background-position: 50% 0%;
+            transition: all 0.3s;
+        }
+        .content20:hover{
+            background-size: 700px;
+            /* transform: scale(0.8); */
+        }
+        @media(max-width:576px){
+            .content20{
+                width: 470px;
+                height: 200px;
+                background-size: 800px;
+                background-position: 50% 10%;
+            }
+            .content20:hover{
+                background-size: 470px;
+            }
+        }
+        .bcgd{
+            display: flex;
+            margin: 0 20px;
+            background: linear-gradient(45deg, #e3e4b0 50%, #faf9ec);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            opacity: 0.1;
+               
+        }
+        .talk{
+            margin: 0 20px;
+             font-size: 20px;
+            font-family: "黑体";
+            padding: 0 50px;
+            /* position: relative; left: 20px; top: 20px; */
+        }
+        .bcgd:hover{
+            background: linear-gradient(45deg,#b760e9 30%, #f5bc02);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-shadow: 0px 3px 20px #7c7c7c;
+            opacity: 1;   
+        
+        }
+        @media(max-width:576px){
+            .content2{
+                flex-direction: column;
+            }
+             .talk{
+                margin: 5px 20px;
+                font-size: 10px;
+                padding: 0 0px;
+    
+        }
+        }
+        .roll{
+            background-color: #fcf160;
+            display: flex;  
+            width:520px;
+            height: 320px;
+            overflow: hidden;
+            border: 2px solid #ddd;
+            position: relative;
+            
+        }
+        @media(max-width:768px){
+            .roll{
+                max-width:100%;
+            }
+        }
+        .img_list2{
+            display: flex;
+            animation: roll 10s ease infinite;
+            text-align: center;
+            
+        }
+        .img_list2 img{
+            width: 500px;
+            height: 281px;
+            margin: 10px;
+            text-align: center;
+        }
+        @keyframes roll{
+            0%,10%{
+                transform: translateX(0);
+            }
+            20%,30%{
+                transform: translateX(-520px);
+            }
+            40%,50%{
+                transform: translateX(-1040px);
+            }
+            60%,70%{
+                transform: translateX(-1560px);
+            }
+            80%,90%{
+                transform: translateX(-2080px);
+            }
+            100%{
+                transform: translateX(0);
+            }
+        }
+        .content22{
+            display: flex;
+        }
+        .all_little_img{
+            display: flex;
+            flex-direction: column;
+        }
+        .little_img{
+            
+            background: linear-gradient(45deg, #9898e6, lightyellow);
+            flex-direction:column;
+            height: 80px;
+        }
+        .little_img :hover{
+            box-shadow: 0 8px 8px 0 gray;
+            transform: translate(0, -10px);
+            transform: scale(3) ;
+            transition: all 1s;
+        }
+        @media(max-width:576px){
+           .little_img :hover{
+            box-shadow: 0 8px 8px 0 gray;
+            transform: translate(0, -10px);
+            transform: scale(2) ;
+            transition: all 1s;}
+        }
+        .little_img img{
+            width: 50px;
+            margin: 10px;
+            text-align: center;
+        }
+        .backg_img{
+            width: 200px;
+            height: 315px;
+            border: 5px solid gray;
+            /* background-image: url("img_folder/phoebe_high.png"); */
+            background: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)),
+            url("img_folder/phoebe_high.png");
+            background-size: 210px;
+            background-repeat: no-repeat;
+            background-position: 50% 50%;
+            /* opacity: 0.3; */
+            transition:  all 0.5s;
+            
+        }
+        .text_bck{
+            position:relative; top: 20px; left: 120px;
+            color: black;
+            font-family: "黑体";
+            font-size: 20px;
+            opacity: 0.6;
+        }
+        .backg_img:hover{
+            /* opacity: 1; */
+             background: url("img_folder/phoebe_high.png");
+            background-position: 75% 5%;
+            background-size: 420px;
+        }
+        @media(max-width:576px){
+            .backg_img{
+                width: 200px;
+                height: 306px;
+                background-size: 100%;
+            }
+        }
+        .test{
+            width: 400px;
+            height: 300px;
+            background-image: url(img_folder/phoebe_teach.png);
+            color: black;
+
+        }   
+    </style>
+</head>
+<body>
+    <header>
+        <div class="slogan">降临吧!</div>
+        <div class="slogan">忏悔吧!</div>
+        <div class="slogan">予以净化吧!</div>
+        <div class="slogan">光明，予以祝颂</div>
+        <div class="slogan">敬请光明垂耀</div>
+        <div class="slogan">愿岁主护佑</div>
+        <h1>菲比啾比</h1>
+    </header>
+    <nav>
+        <div class="link">
+        <a class="link" href="https://www.modelscope.cn/studios/Genius-Society/phoebe_chubby">
+            支持菲比啾比</a>
+        </div>
+    </nav>
+    <main>
+        <div class="move_meme">
+            <div class="jump">
+                <img src="img_folder/phoebe5.png">
+            </div>
+            <div class="scroll">
+                <div class="img_list">
+                    <img src="img_folder/phoebe.png" alt="img_1">
+                    <img src="img_folder/phoebe1.png" alt="img_2">
+                    <img src="img_folder/phoebe2.png" alt="img_3">
+                    <img src="img_folder/phoebe3.png" alt="img_4">
+                    <img src="img_folder/phoebe4.png" alt="img_5">
+                    <img src="img_folder/phoebe5.png" alt="img_6">
+                    <img src="img_folder/phoebe6.png" alt="img_7">
+                    <img src="img_folder/phoebe7.png" alt="img_8">
+                    <img src="img_folder/phoebe8.png" alt="img_9">
+                    <img src="img_folder/phoebe.png" alt="img_1">
+                    <img src="img_folder/phoebe1.png" alt="img_2">
+                    <img src="img_folder/phoebe2.png" alt="img_3">
+                    <img src="img_folder/phoebe3.png" alt="img_4">
+                    <img src="img_folder/phoebe4.png" alt="img_5">
+                    <img src="img_folder/phoebe5.png" alt="img_6">
+                    <img src="img_folder/phoebe6.png" alt="img_7">
+                    <img src="img_folder/phoebe7.png" alt="img_8">
+                    <img src="img_folder/phoebe8.png" alt="img_9">
+                    <img src="img_folder/phoebe.png" alt="img_1">
+                    <img src="img_folder/phoebe1.png" alt="img_2">
+                    <img src="img_folder/phoebe2.png" alt="img_3">
+                    <img src="img_folder/phoebe3.png" alt="img_4">
+                    <img src="img_folder/phoebe4.png" alt="img_5">
+                    <img src="img_folder/phoebe5.png" alt="img_6">
+                    <img src="img_folder/phoebe6.png" alt="img_7">
+                    <img src="img_folder/phoebe7.png" alt="img_8">
+                    <img src="img_folder/phoebe8.png" alt="img_9">          
+                </div>
+            </div>
+            <div class="jump">
+                <img src="img_folder/phoebe3.png">
+            </div>
+        </div>
+        <div class="content">
+            <div class="content1">
+                <div class="content1Head">菲比啾比</div>
+                <aside class="content12 ">
+                    <a href="https://www.modelscope.cn/studios/Genius-Society/phoebe_chubby"
+                    target="_blank">
+                <img src="img_folder/phoebe_dance.png" alt="phoebe_dance"
+                style="width: 150px;"></a>
+                <br>支持菲比主座
+                </aside>
+                <div class="content12">
+                    <a href="https://www.bilibili.com/video/BV1vwPMeEENb/?share_source=copy_web&vd_source=8d64b1ba824a94a0f504125ac3988863"
+                    target="_blank">
+                        <img src="img_folder/phoebe_music.png" alt="music_cover">
+                        <br>daisy crowm
+                    </a>
+                </div>
+                <div class="content12">
+                    <a href="https://www.bilibili.com/video/BV1xR7S6hEkB/?share_source=copy_web&vd_source=8d64b1ba824a94a0f504125ac3988863"
+                    target="_blank">
+                        <img src="img_folder/phoebe_school.png" alt="SchoolLife">
+                        <br>菲比：就你们寝室最吵！
+                    </a>
+                </div>
+                <div class="content12">
+                    <a href=" https://www.bilibili.com/video/BV1WxQSBgEHa/?share_source=copy_web&vd_source=8d64b1ba824a94a0f504125ac3988863"
+                    target="_blank">
+                        <img src="img_folder/phoebe_WaitHome.png" alt="WaitYouHome">
+                        <br>等你回家
+                    </a>
+                </div>
+                <div class="content12"><a href="https://www.bilibili.com/video/BV1XHNCeLEQP/?share_source=copy_web&vd_source=8d64b1ba824a94a0f504125ac3988863"
+                    target="_blank">
+                        <img src="img_folder/phoebe_DarkSide.png" alt="WaitYouHome"
+                        style="width: 420px;">
+                        <br>暗面
+                    </a></div>
+                <aside class="content12">
+                    <a href="https://www.bilibili.com/video/BV194sfzKE2V/?share_source=copy_web&vd_source=8d64b1ba824a94a0f504125ac3988863"
+                    target="_blank">
+                <img src="img_folder/phoebe_InPower.png" alt="GetPower"></a>
+                <br>菲比掌权影像流出
+                </aside>
+                <div class="content1foot">菲比啾比</div>
+            </div>
+            <div class="content2">
+                <div class="content20">
+                    <div class="bcgd">
+                        <p class="talk"><b>弗弗：糯糯<br>
+                            啾比菲比：啾比菲、比啾、比菲比<br>
+                            啾比菲比：啾比菲比啾比菲比啾</b>
+                        </p>
+                        <p class="talk"><b>菲比:菲比啾比！菲比菲比啾比菲比？<br>
+                            菲比啾比：菲比啾比菲比啾比菲比<br></b>
+                        </p>
+                    </div>
+                    
+                </div>
+                <div class="content21">
+                    <div class="roll">
+                        <div class="img_list2">
+                            <img class="img_roll" src="img_folder/phoebe_long.png" alt="img_roll">
+                            <img class="img_roll" src="img_folder/phoebe_long2.png" alt="img_roll">
+                            <img class="img_roll" src="img_folder/phoebe_long3.png" alt="img_roll">
+                            <img class="img_roll" src="img_folder/phoebe_long4.png" alt="img_roll">
+                            <img class="img_roll" src="img_folder/phoebe_long5.png" alt="img_roll" style="width: 500px; height: 375px;">
+                        </div>
+                    </div>
+                </div>
+                <div class="content22">
+                    <div class="all_little_img">
+                        <div class="little_img"> 
+                            <img src="img_folder/phoebe9.png" alt="little_img">
+                            <img src="img_folder/phoebe13.png" alt="little_img"> </div>
+                        <div class="little_img"> 
+                            <img src="img_folder/phoebe10.png" alt="little_img">
+                            <img src="img_folder/phoebe14.png" alt="little_img"></div>
+                        <div class="little_img"> 
+                            <img src="img_folder/phoebe11.png" alt="little_img">
+                            <img src="img_folder/phoebehigh.png" alt="little_img"></div>
+                        <div class="little_img"> 
+                            <img src="img_folder/phoebe12.png" alt="little_img">
+                            <img src="img_folder/phoebe6.png" alt="little_img"></div>
+                    </div>
+                    <div class="backg_img">
+                        <b class="text_bck">干嘛？</b>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+</html>
